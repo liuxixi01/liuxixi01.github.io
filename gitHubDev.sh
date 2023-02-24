@@ -1,3 +1,5 @@
+#!  /usr/bin/bash
+# 先 npm run build 后，一次性提交文件。
 git status 
 git add .
 git commit --no-verify -m "add files"

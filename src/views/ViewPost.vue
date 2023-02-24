@@ -1,6 +1,8 @@
 <template>
   <div>
-    <img :src="require( '@/static/img/' + post.cover)" class="cover" />
+    <div class="img-center">
+      <img :src="require( '@/static/img/' + post.cover)" class="cover" />
+    </div>
     <div class="container">
       <div class="text-center">
         <h1 class="headline">{{ post.title }}</h1>
@@ -97,8 +99,12 @@ export default {
 </script>
 
 <style>
+.img-center{
+  text-align: center;
+}
+
 .cover {
-  width: 100vw;
+  width: 20vw;
 }
 
 .margin {
