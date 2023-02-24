@@ -6,21 +6,21 @@ import 'vuesax/dist/vuesax.css'
 import 'boxicons'
 import 'boxicons/css/boxicons.min.css'
 
-console.log(`
-_   __         ___  __
-| | / /_ _____ / _ )/ /__  ___ ____ ____ ____
-| |/ / // / -_) _  / / _ \\/ _ \`/ _ \`/ -_) __/
-|___/\\_,_/\\__/____/_/\\___/\\_, /\\_, /\\__/_/
-                        /___//___/
+// console.log(`
+// _   __         ___  __
+// | | / /_ _____ / _ )/ /__  ___ ____ ____ ____
+// | |/ / // / -_) _  / / _ \\/ _ \`/ _ \`/ -_) __/
+// |___/\\_,_/\\__/____/_/\\___/\\_, /\\_, /\\__/_/
+//                         /___//___/
 
-For geeks who wanted to write their blog site in Vue                 v0.1.0
+// For geeks who wanted to write their blog site in Vue                 v0.1.0
 
-Powered by %cVueBlogger%cv0.1.0%c
+// Powered by %cVueBlogger%cv0.1.0%c
 
-GitHub: https://github.com/samzhangjy/VueBlogger\nPlease star & fork to support the author!`,
-'background-color: #1A55ED; padding: 7px; color: #fff;',
-'background-color: #FCBF23; color: #000; padding: 7px;',
-'font-weight: bold')
+// GitHub: https://github.com/samzhangjy/VueBlogger\nPlease star & fork to support the author!`,
+// 'background-color: #1A55ED; padding: 7px; color: #fff;',
+// 'background-color: #FCBF23; color: #000; padding: 7px;',
+// 'font-weight: bold')
 
 Vue.config.productionTip = false
 

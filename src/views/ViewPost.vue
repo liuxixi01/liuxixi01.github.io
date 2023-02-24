@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="post.cover" class="cover" />
+    <img :src="require( '@/static/img/' + post.cover)" class="cover" />
     <div class="container">
       <div class="text-center">
         <h1 class="headline">{{ post.title }}</h1>

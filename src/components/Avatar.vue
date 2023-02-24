@@ -2,7 +2,7 @@
   <div :class="`${home ? 'avatar-home' : ''}`">
     <vs-avatar :size="size" circle>
       <img
-        :src="config.avatarPath"
+        :src="require('@/static/img/' + config.userImg)"
       >
     </vs-avatar>
   </div>
