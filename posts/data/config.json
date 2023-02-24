@@ -1,0 +1,19 @@
+{
+    "config": {
+        "username": "多读书，多总结",
+        "avatarPath": "https://avatars.dicebear.com/api/miniavs/Johndoe.svg",
+        "description": "腹有诗书气自华",
+        "name": "LiuJinYao",
+        "blogTitle": "More BooKs",
+        "blogStartYear": 2023,
+        "theme": "default",
+        "nothing": ""
+    },
+    "contacts": [
+        {
+            "name": "LiuJinYao",
+            "value": "592203122@qq.com",
+            "link":"https://github.com/morebooks0"
+        }
+    ]
+}
