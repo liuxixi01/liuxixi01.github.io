@@ -15,6 +15,8 @@ Acknowledge character # 标志位；在TCP协议内容中的Flags中显示；表
 
 seq num
 
+<img src="./md_img/PNG1.png" style="zoom: 33%;" />
+
 ack num
 
 ## 握手过程
