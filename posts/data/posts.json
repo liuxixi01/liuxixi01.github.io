@@ -2,10 +2,10 @@
     "posts": [
         {
             "title": "TCP的包和它的三次握手", 
-            "tags": ["网络"], 
-            "cover": "SQL_ATTACK.png",
-            "des": "这是个描述",
-            "date": [ 2021,10,6],
+            "tags": ["网络","TCP协议"], 
+            "cover": "TcpShakeHands.svg",
+            "des": "HTTP访问时，tcp是怎么跟后台服务建立链接的",
+            "date": [2023,2,25],
             "id": "TCP"
         }
     ]

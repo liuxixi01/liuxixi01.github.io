@@ -13,12 +13,6 @@ Acknowledge character # 标志位；在TCP协议内容中的Flags中显示；表
 
 ```
 
-seq num
-
-<img src="./md_img/PNG1.png" style="zoom: 33%;" />
-
-ack num
-
 ## 握手过程
 
 1. client发送一个随机seq值，Seq Num=0，ACK=0，SYN标志的数据包给server
@@ -27,6 +21,9 @@ ack num
    Sequence Number: 0    (relative sequence number)  
    Acknowledgment Number: 0
    ```
+<img src="./md_img/tcp-hand1.png" style="zoom: 33%;" />
+
+   
 
 2. server收到后，回一个随机seq值，Seq Num=0，ACK=1，ACK+SYN标志的数据包给client
 
@@ -34,7 +31,9 @@ ack num
    Sequence Number: 0    (relative sequence number)  
    Acknowledgment Number: 1    (relative ack number)
    ```
-
+   
+   <img src="./md_img/tcp-hand2.png" style="zoom: 33%;" />
+   
 3. client收到后，检查ACK是否等于1，回一个Seq Num=1，ACK=1，ACK标志的数据包
 
    ```text
@@ -42,7 +41,10 @@ ack num
    Acknowledgment Number: 1    (relative ack number)
    ```
 
-   
+<img src="./md_img/tcp-hand3.png" style="zoom: 33%;" />
+
+
+
 
 # TCP的标志位（位码）
 

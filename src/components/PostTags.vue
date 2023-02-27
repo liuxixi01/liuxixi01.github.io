@@ -1,7 +1,7 @@
 <template>
-  <vs-alert class="text-center alert">
+  <vs-alert class="text-center alert tags-nav">
     <template #title>
-      Tags
+      The Same Tags：
     </template>
     <div class="center-tags" v-if="postTags.length">
       <vs-button
@@ -38,5 +38,8 @@ export default {
 .alert {
   margin-bottom: 50px;
   height: 100% !important;
+}
+.tags-nav{
+  width: 400px;
 }
 </style>
