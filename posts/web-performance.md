@@ -29,11 +29,11 @@
 3. 加载完成显示至网页上
 4. 重复
 
-<img src="md_img/performance-timing.png" style="zoom:40%;" />
+<img src="./md_img/performance-timing.png" style="zoom:40%;" />
 
 而Navigation Timing 的level2 版本，继续深化加强了对获取资源的阶段的规范，定义面向resource的Resource Timing对象，以更细化过程性能。
 
-<img src="md_img/performance-timing2.png" style="zoom:40%;" />
+<img src="./md_img/performance-timing2.png" style="zoom:40%;" />
 
 那么怎么说？ 看例：
 
@@ -45,11 +45,11 @@ window.performance.timing.loadEventEnd - window.performance.timing.navigationSta
 
 我们以知乎的一个页面为例观察下。从network模块或者performance模块捕获，或者人为感知下，判断这个页面是渲染大概是2S左右，而network的timeline显示是1.97S。而在红线之后（2S到3.5S这段时间）没做啥事情，那我认为这个页面渲染完全渲染和大部分渲染是成立。那这个1.97S怎么能被获取到呢。
 
-<img src="D:md_img/performance-eventLoad1.png" style="zoom:30%;" />
+<img src="./md_img/performance-eventLoad1.png" style="zoom:30%;" />
 
 我们可以直接在控制台执行API来获取，得到的结果，就是这个Load的值。哦， nice！
 
-<img src="md_img/performance-eventLoad2.png" style="zoom:30%;" />
+<img src="./md_img/performance-eventLoad2.png" style="zoom:30%;" />
 
 那么，自动化就好办了。存在页面路由List： [A,B,C]，只要打开网页，等待一段时间，然后执行js，就可以获取到性能时间，哇塞，这通用性这么强吗...
 

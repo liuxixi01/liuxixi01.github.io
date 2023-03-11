@@ -7,7 +7,6 @@
         </div>
         <h1>{{ config.name }}</h1>
         <h4 style="color: #666666">{{ config.username }}</h4>
-        <p>{{ config.description }}</p>
       </div>
       <h2>Latest Posts</h2>
       <hr/>
