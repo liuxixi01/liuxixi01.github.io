@@ -11,7 +11,7 @@
       <template #text>
         <p class="post-txt">{{ post.des }}</p>
         <small class="post-card-tag">
-          <b :key="i" v-for="(tag, i) in post.tags" style="margin-right: 5px">
+          <b :key="i" v-for="(tag, i) in post.tags" style="margin-right: 5px; color: rgba(var(--vs-color), 1);">
             {{ tag }}
           </b>
         </small>
@@ -56,11 +56,11 @@ export default {
 }
 
 .post-card .vs-card {
-  height: 380px !important;
+  /* height: 380px !important; */
 }
 
 .post-card-tag {
-  position: absolute;
-  bottom: 20px;
+  /* position: absolute;
+  bottom: 20px; */
 }
 </style>
