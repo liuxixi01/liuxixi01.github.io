@@ -6,7 +6,7 @@
         <small>{{ post.date[0] }}/{{ post.date[1] }}/{{ post.date[2] }}</small>
       </template>
       <template #img>
-        <img :src="require( '@/static/img/' + post.cover)" alt />
+        <img :src="require( '@/static/img/' + post.cover)" alt style="width: auto;" />
       </template>
       <template #text>
         <p class="post-txt">{{ post.des }}</p>

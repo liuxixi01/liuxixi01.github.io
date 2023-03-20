@@ -40,5 +40,13 @@
             "date": [2023,3,19],
             "id": "Manager1"
         }
+        ,{
+            "title": "搭建一个多网卡ALL IN ONE服务器", 
+            "tags": ["运维","网络"], 
+            "cover": "service.svg",
+            "des": "欢迎来一起交流搭建多网卡服务器",
+            "date": [2023,3,18],
+            "id": "AIO-Server"
+        }
     ]
 } 

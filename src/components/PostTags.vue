@@ -40,6 +40,6 @@ export default {
   height: 100% !important;
 }
 .tags-nav{
-  width: 400px;
+  width: 25%;
 }
 </style>

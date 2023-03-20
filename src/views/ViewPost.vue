@@ -18,6 +18,7 @@
       </div>
       <hr>
       <router-view class="post"></router-view>
+
       <PostTags :postTags="post.tags" />
       <PostNavBtn :prev="prevPost" :next="nextPost" />
     </div>
@@ -117,5 +118,10 @@ export default {
 
 .post img:hover{
   width: 80%;
+}
+
+.frontmatter-markdown{
+    width: 80%;
+    margin: 0px 0px 0px 5%;
 }
 </style>

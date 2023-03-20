@@ -12,12 +12,12 @@ robot中**prerunmodifier**的加入减少重复引入，让代码框架更轻量
 
 #### 历史问题
 
-为了模块化，复杂的项目会定义分类出颗粒度不同的前置条件或者全局变量，以供不同的用例运行前作为suite setup来调用。而robotframework项目在执行每一个robot文件时，都是从setting开始，引入resource文件，执行suite setup，再然后执行testcase等。那么有两种情况会重复执行setup，如果setup中定义一下公共变量耗时比较长时，那么重复执行setup将大大加长了全量用例的执行时间。（注：robot文件的suit setup中执行定义的变量只作用于本robot用例范围）
+为了模块化地设计，复杂的项目会定义分类出颗粒度不同的前置条件或者全局变量，以供不同的用例运行前作为suite setup来调用。而robotframework项目在执行每一个robot文件时，都是从setting开始，引入resource文件，执行suite setup，再然后执行testcase等。那么有两种情况会重复执行setup，如果setup中定义一下公共变量耗时比较长时，那么重复执行setup将大大加长了全量用例的执行时间。（注：robot文件的suit setup中执行定义的变量只作用于本robot用例范围）
 
-1. test cases分开文件了，这个你无法避免，因为你总不能一个robot文件，写上上千条用例吧，那么对于公共变量，每多加一个robot，这块的执行就是冗余的。
+1. 自动化测试用例写成多个robot文件。testcases分开文件了，这个你无法避免，因为你总不能一个robot文件，写上上千条用例吧，那么对于公共变量，每多加一个robot，这个robot在运行时，就需要调用setup。那么第二次被执行，那就是冗余的。
 2. resource文件颗粒度较大导致每个robot都调用，也是直接冗余+冗余了。
 
-
+<br>如下是一个测试用例robot的文件: 这个文件引入了两个自定义模块的resource。其中初始化.robot中定义的keyword（初始化应用识别环境）被作为测试套件的初始化操作并最先执行。
 
 ```robot
 # case.robot
@@ -52,14 +52,14 @@ ${参数2}    cat /proc/net/nf_conntrack; conntrack -D;
      ...这里有很多，耗时比较长
  ```
 
-那么在项目进行下去的时候，如case.robot的用例文件多了起来之后，耗时就慢慢变得很长很长。
+那么在项目进行下去的时候，如case.robot的用例文件多了起来之后，这个keyword会被一遍一遍地执行。耗时就慢慢变得很长很长。
 
+<br>
 
-
-#### 核心逻辑
+#### 优化的核心逻辑
 
 ```python
-# SuiteVisitor.py  项目目录下创建
+# SuiteVisitor.py  需要在项目的根目录下创建
 """
                     
 参考材料：https://robot-framework.readthedocs.io/en/latest/_modules/robot/model/visitor.html  #  prerunmodifier 标准文件
@@ -69,7 +69,7 @@ from robot.api import TestSuiteBuilder
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-init_robot_path = '配置初始化.robot'
+init_robot_path = '配置初始化.robot'    # 创建一个robot，这里为最公共的，希望在项目运行中只被初始化一次就够了的逻辑。
 # 重写套件
 class SuiteVisitor:
     """Abstract class to ease traversing through the suite structure.
@@ -120,7 +120,6 @@ class SuiteVisitor:
 Resource            common.robot
 
 
-
 *** Variables ***
 
 ...定义了很多全局变量
@@ -131,3 +130,6 @@ Resource            common.robot
 
 ```
 
+<br>
+
+试试吧，看下你的项目是不是可以去掉很多冗余的import
