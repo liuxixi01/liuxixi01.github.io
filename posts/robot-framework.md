@@ -1,16 +1,6 @@
-#### 前言
+[TOC]
 
-
-
-#### 关键节点
-
-robot中**prerunmodifier**的加入减少重复引入，让代码框架更轻量清晰，resource一次加载。
-
-
-
-
-
-#### 历史问题
+### 历史问题
 
 为了模块化地设计，复杂的项目会定义分类出颗粒度不同的前置条件或者全局变量，以供不同的用例运行前作为suite setup来调用。而robotframework项目在执行每一个robot文件时，都是从setting开始，引入resource文件，执行suite setup，再然后执行testcase等。那么有两种情况会重复执行setup，如果setup中定义一下公共变量耗时比较长时，那么重复执行setup将大大加长了全量用例的执行时间。（注：robot文件的suit setup中执行定义的变量只作用于本robot用例范围）
 
@@ -56,7 +46,9 @@ ${参数2}    cat /proc/net/nf_conntrack; conntrack -D;
 
 <br>
 
-#### 优化的核心逻辑
+### 优化的核心逻辑
+
+robot中**prerunmodifier**的加入减少重复引入，让代码框架更轻量清晰，resource一次加载。
 
 ```python
 # SuiteVisitor.py  需要在项目的根目录下创建

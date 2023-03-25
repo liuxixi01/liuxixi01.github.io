@@ -145,7 +145,20 @@ nav.table-of-contents{
     right: 1%;
     top: 20%;
     position: fixed;
+    background-color: #d5d5d561;
+    border-radius: 20px;
+}
+nav.table-of-contents ol{
+  /* padding-inline-start: 0px; */
+  padding: 0px 13px 0px 13px;
 }
 nav.table-of-contents li{
   list-style-type: none;
+}
+nav.table-of-contents a{
+  color: #195bff;
+}
+/* 解决锚点跳转被导航栏遮挡的问题 */
+html{
+  scroll-padding-top: 75px;
 }

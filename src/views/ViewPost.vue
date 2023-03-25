@@ -2,7 +2,7 @@
   <div>
     <!-- 博客详情 -->
     <div class="img-center">
-      <img :src="require( '@/static/img/' + post.cover)" class="cover" />
+      <img :src="getImg(post.cover)" class="cover" />
     </div>
     <div class="container">
       <div class="text-center">
@@ -88,6 +88,9 @@ export default {
           console.log(err) // Handle error
         }
       }
+    },
+    getImg: function (imgPath) {
+      return require('@/static/img/' + imgPath)
     }
   },
   mounted: function () {
