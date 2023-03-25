@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- 博客详情 -->
     <div class="img-center">
       <img :src="require( '@/static/img/' + post.cover)" class="cover" />
     </div>
@@ -9,6 +10,7 @@
         <p>
           编录时间: {{ `${post.date[0]}/${post.date[1]}/${post.date[2]}` }}
         </p>
+        <!-- 作者介绍 -->
         <div class="center">
           <Avatar />
           <span class="margin">
@@ -64,7 +66,7 @@ export default {
   methods: {
     getPost: function () {
       // because of markdown file rendering, can't use the triditional dynamic route matching
-      this.postId = this.$route.path.split('posts/')[1]
+      this.postId = this.$route.path.split('posts/')[1] // 获取到当前页面需要查看的博客名称
       const curPostIdx = this.posts.findIndex((post) => post.id === this.postId)
       if (curPostIdx >= 0) { // post found
         this.post = this.posts[curPostIdx]

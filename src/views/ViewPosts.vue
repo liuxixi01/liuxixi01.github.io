@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- 博客汇总页 -->
     <h1 class="text-center">Posts</h1>
     <hr />
     <div v-if="getPosts().length">

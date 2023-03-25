@@ -10,9 +10,12 @@
   "dependencies": {
     "boxicons": "^2.0.5",
     "core-js": "^3.6.5",
+    "markdown-it-anchor": "^8.6.7",
     "markdown-it-highlightjs": "^3.2.0",
     "markdown-it-link-attributes": "^3.0.0",
+    "markdown-it-toc-done-right": "^4.2.0",
     "npm": "^9.5.1",
+    "uslug": "^1.0.4",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuesax": "^4.0.1-alpha.24"
