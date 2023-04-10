@@ -129,4 +129,17 @@ export default {
     width: 80%;
     margin: 0px 0px 0px 5%;
 }
+
+pre code{
+  max-height: 400px;
+  overflow: auto;
+}
+
+pre code.language-python,
+pre code.language-html,
+pre code.language-js
+{
+  background-color: #e7e8f6;
+}
+
 </style>

@@ -96,6 +96,7 @@ debug下业务uri：/v2transapi?from=zh&to=en
 <img src="./md_img/fanyi-baidu-debug5.png" style="zoom:25%;" />
 
 找到w变量后，我们看到sign值是一个b函数的返回值。b函数的入参是查询内容。
+
 <img src="./md_img/fanyi-baidu-debug6.png" style="zoom:25%;" />
 
 我们再找找这个b函数。
@@ -177,4 +178,5 @@ if __name__ == '__main__':
 ```
 
 打完收工
+
 <img src="./md_img/fanyi-baidu-result.png" style="zoom:25%;" />
