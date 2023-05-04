@@ -1,4 +1,6 @@
-# ALL IN ONE SERVE
+[TOC]
+
+#### 前言
 
 本文主要探索在复杂的网络拓扑测试上，对于多服务器有较高的需求的。怎么通过一个服务器来满足实现多服务器的效果。如下图。基本参数为:
 
@@ -7,7 +9,7 @@
 3. eth3：110.100.1.0/24
 4. eth4：105.110.1.0/24
 
-<img src="./md_img/business.png" style="zoom: 80%;" />
+<img src="./md_img/business.png" style="zoom: 20%;" />
 
 在实现过程中，有几个问题，这里一一记录下。
 
@@ -16,15 +18,15 @@
 
 
 
-#### 非对称路由回包问题：
+#### 非对称路由回包问题
 
 首先看我的centos7的路由表，只配置了一个默认路由，从eth1回包。就是说我在103.100.1.201 发出一个icmp-request包到eth2（110.100.1.2），正常来说服务器查路由表，将icmp-reply包从eth1出去，回到下一跳。
 
-<img src="./md_img/server_static_route.png" style="zoom:80%;" />
+<img src="./md_img/server_static_route.png" style="zoom:20%;" />
 
 而我的内核驱动关闭了非对称路由回包。什么意思呢？在ping的时候，你在服务器抓any网口的icmp包，只会看到有request包，而不会有reply包。
 
-<img src="./md_img/icmp_no_return.png" style="zoom:80%;" />
+<img src="./md_img/icmp_no_return.png" style="zoom:20%;" />
 
 很奇怪，明明已经是目的了，怎么没有生成reply包。当然，你理解这个的时候，认为是其实是有生成reply包的，只是不往网卡上发或者往网卡上发的时候被拦截了，所以在网卡上没有抓到。我觉得两种理解都行，现象是一样的，有兴趣的继续深扒。那么怎么看是不是限制了非对称路由回包呢。 filter=1则为限制非对称路由回包。（听说正常应该是关闭限制的） 
 
@@ -34,7 +36,7 @@
 
 
 
-<img src="./md_img/rp_filter1.png" style="zoom:80%;" />
+<img src="./md_img/rp_filter1.png" style="zoom:20%;" />
 
 那么，关闭限制后，看看会是怎么样的呢？我们发现，eth3口的是只有request包，而reply的包是在eth1口 ？
 
@@ -43,11 +45,11 @@
 echo "0" > /proc/sys/net/ipv4/conf/all/rp_filter && echo "0" > /proc/sys/net/ipv4/conf/default/rp_filter && echo "0" > /proc/sys/net/ipv4/conf/eth0/rp_filter
 ```
 
-<img src="./md_img/rp_filter_return.png" style="zoom:80%;" />
+<img src="./md_img/rp_filter_return.png" style="zoom:20%;" />
 
 即使它是非对称回包，但是正常情况是没有影响的，103.100.1.201 应该是可以收到回包了。此时链路就是正常的了。那么，我挂载多张网卡，每张网卡上挂载多个ip，多网卡就意味着存在多个MAC地址了，就能模拟多服务器了。（多IP为了有一些特殊需求），这里列出我的多网卡信息：
 
-<img src="./md_img/ips.png" style="zoom:80%;" />
+<img src="./md_img/ips.png" style="zoom:20%;" />
 
 ```cmd
 # 这里赘述一下centos配置ip和路由的情况
@@ -65,7 +67,7 @@ echo "0" > /proc/sys/net/ipv4/conf/all/rp_filter && echo "0" > /proc/sys/net/ipv
 
 
 
-#### 链路吞包问题：
+#### 链路吞包问题
 
 出事了，出事了~ 有一天突然ping不通服务器了。我看到服务器还是有正常回包。但是路由这里没有抓到包了。唉，很难。不知道是不是非对称回包的被路由器（或者防火墙拦截）丢弃了。呃，翻车翻车。
 
@@ -102,7 +104,7 @@ ip rule  # 查看路由规则
 
 ```
 
-<img src="./md_img/ip_rule.png" style="zoom:80%;" />
+<img src="./md_img/ip_rule.png" style="zoom:20%;" />
 
 ```cmd
 ip route show table table3
@@ -111,7 +113,7 @@ ip route show table table3
 
 可以了。这下可以在eth3上抓到request包和reply包了（这里我换了一台同网段PCping的，不过没关系，同理）
 
-<img src="./md_img/ping_ok.png" style="zoom:80%;" />
+<img src="./md_img/ping_ok.png" style="zoom:20%;" />
 
 ```cmd
 # 那其他网口的一并加上吧

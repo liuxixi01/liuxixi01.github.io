@@ -1,7 +1,8 @@
 <template>
   <div>
+    <!-- 博客详情 -->
     <div class="img-center">
-      <img :src="require( '@/static/img/' + post.cover)" class="cover" />
+      <img :src="getImg(post.cover)" class="cover" />
     </div>
     <div class="container">
       <div class="text-center">
@@ -9,6 +10,7 @@
         <p>
           编录时间: {{ `${post.date[0]}/${post.date[1]}/${post.date[2]}` }}
         </p>
+        <!-- 作者介绍 -->
         <div class="center">
           <Avatar />
           <span class="margin">
@@ -64,7 +66,7 @@ export default {
   methods: {
     getPost: function () {
       // because of markdown file rendering, can't use the triditional dynamic route matching
-      this.postId = this.$route.path.split('posts/')[1]
+      this.postId = this.$route.path.split('posts/')[1] // 获取到当前页面需要查看的博客名称
       const curPostIdx = this.posts.findIndex((post) => post.id === this.postId)
       if (curPostIdx >= 0) { // post found
         this.post = this.posts[curPostIdx]
@@ -86,6 +88,9 @@ export default {
           console.log(err) // Handle error
         }
       }
+    },
+    getImg: function (imgPath) {
+      return require('@/static/img/' + imgPath)
     }
   },
   mounted: function () {
@@ -124,4 +129,17 @@ export default {
     width: 80%;
     margin: 0px 0px 0px 5%;
 }
+
+pre code{
+  max-height: 400px;
+  overflow: auto;
+}
+
+pre code.language-python,
+pre code.language-html,
+pre code.language-js
+{
+  background-color: #e7e8f6;
+}
+
 </style>

@@ -48,5 +48,21 @@
             "date": [2023,3,18],
             "id": "AIO-Server"
         }
+        ,{
+            "title": "爬虫系列-No.1-百度翻译", 
+            "tags": ["爬虫","web逆向"], 
+            "cover": "reptile.svg",
+            "des": "欢迎来一起交流爬虫和web逆向",
+            "date": [2023,4,1],
+            "id": "web-reverse"
+        }
+        ,{
+            "title": "用MarkDown写演示文档", 
+            "tags": ["工具"], 
+            "cover": "ppt.svg",
+            "des": "欢迎来一起交流如何用MarkDown写演示文档",
+            "date": [2023,4,7],
+            "id": "reveal-markdown"
+        }
     ]
 } 
