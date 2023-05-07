@@ -34,7 +34,7 @@
         }
         ,{
             "title": "建立一些标准化信息对效率的软提升", 
-            "tags": ["测试","管理"], 
+            "tags": ["测试管理"], 
             "cover": "manager1.svg",
             "des": "欢迎来一起交流项目管理中提高效率",
             "date": [2023,3,19],
@@ -63,6 +63,38 @@
             "des": "欢迎来一起交流如何用MarkDown写演示文档",
             "date": [2023,4,7],
             "id": "reveal-markdown"
+        }
+        ,{
+            "title": "npm工具的使用和理解", 
+            "tags": ["运维", "工程", "前端"], 
+            "cover": "npm.svg",
+            "des": "欢迎来一起交流如何在内网部署一个npm工具的",
+            "date": [2023,4,20],
+            "id": "intarnet-devlop-npm-server"
+        }
+        ,{
+            "title": "TSE系列-01-怎么问出一个高质量需求？", 
+            "tags": ["测试活动"], 
+            "cover": "TestManager.svg",
+            "des": "欢迎来一起交流如何从TSE的工作出发准入一个高质量需求",
+            "date": [2023,5,7],
+            "id": "test-high-grade-demand"
+        }
+        ,{
+            "title": "TSE系列-02-DFX测试活动是什么？", 
+            "tags": ["测试活动"], 
+            "cover": "TestManager.svg",
+            "des": "欢迎来一起交流TSE如何做DFX测试呢",
+            "date": [2023,5,10],
+            "id": "test-dfx"
+        }       
+        ,{
+            "title": "TSE系列-03-软件的可测试性是什么？", 
+            "tags": ["测试活动"], 
+            "cover": "TestManager.svg",
+            "des": "欢迎来一起交流TSE如何做可测试性呢",
+            "date": [2023,5,10],
+            "id": "test-testability"
         }
     ]
 } 
