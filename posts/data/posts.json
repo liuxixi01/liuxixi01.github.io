@@ -95,6 +95,13 @@
             "des": "欢迎来一起交流TSE如何做可测试性呢",
             "date": [2023,5,10],
             "id": "test-testability"
+        },{
+            "title": "Python系列-No.1-Property属性", 
+            "tags": ["Python"], 
+            "cover": "Python.svg",
+            "des": "欢迎来一起交流Python吧",
+            "date": [2023,5,24],
+            "id": "python-property"
         }
     ]
 } 
