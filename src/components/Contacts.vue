@@ -18,8 +18,8 @@
               <h3>{{ contact.name }}</h3>
             </template>
             <template #text>
-              <p>
-                {{ contact.value }}
+              <p v-for="(email,index) in contact.value" :key="index">
+                {{ email }}
               </p>
             </template>
           </vs-card>

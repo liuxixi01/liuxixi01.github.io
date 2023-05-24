@@ -12,7 +12,7 @@
     "contacts": [
         {
             "name": "LiuJinYao",
-            "value": "592203122@qq.com",
+            "value": ["592203122@qq.com", "liujinyao@sangfor.com.cn"],
             "link":"https://github.com/morebooks0"
         }
     ]
