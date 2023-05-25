@@ -141,7 +141,7 @@
 
    ​    总体上看，如果是基于保护触发，在业务需要直接调用查询、修改、删除的逻辑函数，也是也可以基本达到目的的。不过这种做法就**无法规避exec()或eval()的注入**。
 
-   <img src="D:\code\morebooks\posts\md_img\python-property-attack.png" style="zoom:25%;" />
+   <img src="./md_img/python-property-attack.png" style="zoom:25%;" />
 
    
 

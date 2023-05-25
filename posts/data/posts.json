@@ -49,7 +49,7 @@
             "id": "AIO-Server"
         }
         ,{
-            "title": "爬虫系列-No.1-百度翻译", 
+            "title": "爬虫系列-01-百度翻译", 
             "tags": ["爬虫","web逆向"], 
             "cover": "reptile.svg",
             "des": "欢迎来一起交流爬虫和web逆向",
@@ -96,7 +96,7 @@
             "date": [2023,5,10],
             "id": "test-testability"
         },{
-            "title": "Python系列-No.1-Property属性", 
+            "title": "Python系列-01-Property属性", 
             "tags": ["Python"], 
             "cover": "Python.svg",
             "des": "欢迎来一起交流Python吧",
