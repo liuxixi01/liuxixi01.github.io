@@ -9,21 +9,19 @@
         :key="index"
         class="col"
       >
-        <a :href="contact.link" target="_blank">
-          <vs-card
-            type="3"
-            class="center"
-          >
-            <template #title>
-              <h3>{{ contact.name }}</h3>
-            </template>
-            <template #text>
-              <p v-for="(email,index) in contact.value" :key="index">
-                {{ email }}
-              </p>
-            </template>
-          </vs-card>
-        </a>
+      <vs-card
+      type="3"
+      class="center"
+    >
+      <template #title>
+        <h3>{{ contact.name }}</h3>
+      </template>
+      <template #text>
+        <p v-for="(email,index) in contact.value" :key="index">
+          {{ email }}
+        </p>
+      </template>
+    </vs-card>
       </div>
     </div>
     <Nothing />
