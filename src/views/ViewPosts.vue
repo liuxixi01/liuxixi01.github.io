@@ -5,7 +5,7 @@
     <hr />
     <div v-if="getPosts().length">
       <br />
-      <div class="grid-3_xs-1_sm-2_md-2">
+      <div class="grid-6_xs-1_sm-2_md-2">
         <div
           :key="index"
           v-for="(post, index) in getPosts()"
@@ -41,14 +41,15 @@ export default {
   },
   mounted: function () {
     this.changeTitle('Posts')
-    const posts = this.allPosts
+    const posts = this.allPosts.reverse()
     this.allPosts = []
-    for (let i = 0; i < posts.length; i += 6) this.allPosts.push(posts.slice(i, i + 6)) // pagination, 6 posts per page
+    for (let i = 0; i < posts.length; i += 12) this.allPosts.push(posts.slice(i, i + 12)) // pagination, 6 posts per page
+    // console.log(this.allPosts)
   },
   methods: {
     getPosts: function () {
       try {
-        return this.allPosts[this.curPage - 1].slice().reverse()
+        return this.allPosts[this.curPage - 1].slice()
       } catch (e) {
         return []
       }
