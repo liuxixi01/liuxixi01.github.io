@@ -7,7 +7,8 @@
 ### 基础知识
 
 1. property本身为一个类方法，通过传入的get/set/del/doc方法， 构造返回一个property对象。
-   <img src="D:\code\morebooks\posts\md_img\python-property-args.png" style="zoom:38%;" />
+   
+   <img src="./md_img/python-property-args.png" style="zoom:38%;" />
 2. property是被设计出来补充对象保护（只读）属性的可靠性，是魔术方法的一类
 3. 如果在类装饰器上使用，需要注意：**get/set/del的三个函数的函数名是一样的，都指向到被调用对象（被@property装饰的对象）**。
 4. set/del方法的装饰，是**调用对象的setter和deleter的方法**进行装饰。

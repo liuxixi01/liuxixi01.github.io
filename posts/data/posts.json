@@ -73,11 +73,11 @@
             "id": "intarnet-devlop-npm-server"
         }
         ,{
-            "title": "TSE系列-01-怎么问出一个高质量需求？", 
+            "title": "TSE系列-01-测试怎么牵引高质量需求", 
             "tags": ["测试活动"], 
             "cover": "TestManager.svg",
             "des": "欢迎来一起交流如何从TSE的工作出发准入一个高质量需求",
-            "date": [2023,5,7],
+            "date": [2023,7,2],
             "id": "test-high-grade-demand"
         }
         ,{
@@ -93,7 +93,7 @@
             "tags": ["测试活动"], 
             "cover": "TestManager.svg",
             "des": "欢迎来一起交流TSE如何做可测试性呢",
-            "date": [2023,5,10],
+            "date": [2023,7,10],
             "id": "test-testability"
         },{
             "title": "Python系列-01-Property属性", 
@@ -102,6 +102,13 @@
             "des": "欢迎来一起交流Python吧",
             "date": [2023,5,24],
             "id": "python-property"
+        },{
+            "title": "客制化键盘——QMK改键any键", 
+            "tags": ["客制化键盘"], 
+            "cover": "key-board.svg",
+            "des": "欢迎来一起交流怎么用via改键完成客制化吧",
+            "date": [2023,7,17],
+            "id": "QMK-self-keyboard"
         }
     ]
 } 
